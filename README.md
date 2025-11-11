@@ -361,7 +361,7 @@ PicoPicoRubyは、PicoRubyの相互扶助コミュニティです。
 
 - Connpassページ: https://picopicoruby.connpass.com/
 
-### FuraIT（富良野ITコミュニティ）
+### FuraIT（ふらいと）
 
 FuraITは富良野市で活動するITコミュニティで、Arduino部が活発に活動しています。
 Arduino部ではDiscordの音声チャンネルを使って定期的に勉強会を開催し、電子工作初心者から経験者まで参加しています。
