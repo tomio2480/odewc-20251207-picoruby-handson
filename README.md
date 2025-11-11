@@ -129,8 +129,8 @@ PCにUSB-Aポートがない場合（USB-Cのみの場合など）は、別途US
 7. **圧電サウンダ**（例：SPT15）
    https://akizukidenshi.com/catalog/g/g104228/
 
-8. **LED**（5mm各色）
-   https://akizukidenshi.com/catalog/c/c5mm
+8. **LED**（例：5mm赤色LED）
+   https://akizukidenshi.com/catalog/g/g101318/
 
 9. **カーボン抵抗 1/4W 1kΩ**
    https://akizukidenshi.com/catalog/g/g125102/
