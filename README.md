@@ -132,10 +132,13 @@ PCにUSB-Aポートがない場合（USB-Cのみの場合など）は、別途US
 8. **LED**（例：5mm赤色LED）
    https://akizukidenshi.com/catalog/g/g101318/
 
-9. **カーボン抵抗 1/4W 1kΩ**
-   https://akizukidenshi.com/catalog/g/g125102/
+9. **カーボン抵抗 1/4W 100Ω**
+   https://akizukidenshi.com/catalog/g/g125101/
 
-10. **ティルトスイッチ（傾斜スイッチ）**
+10. **半固定抵抗 1kΩ**
+    https://akizukidenshi.com/catalog/g/g108011/
+
+11. **ティルトスイッチ（傾斜スイッチ）**
     https://akizukidenshi.com/catalog/c/ctiltsw/
 
 秋月電子通商: https://akizukidenshi.com/
@@ -310,7 +313,7 @@ button.read  # => 押していない: 1（HIGH）、押している: 0（LOW）
 ### 圧電サウンダの使い方
 
 圧電サウンダは電圧を加えると音を鳴らす部品です。PWM（パルス幅変調）で周波数を変えることで、音程を変えられます。
-上記回路図ではGP9ピンに電流制限抵抗（R4=1kΩ）を介して接続されています。
+上記回路図ではGP9ピンに電流制限抵抗（R4=100Ω）を介して接続されています。
 
 ```ruby
 require 'pwm'
@@ -323,7 +326,7 @@ buzzer.duty(0)     # デューティ比0%で音を止める
 ### LEDの使い方
 
 LEDは電流を流すと光る部品で、デジタル出力で点灯・消灯を制御できます。
-上記回路図ではGP12ピンに電流制限抵抗（R5=1kΩ）を介して接続されています。
+上記回路図ではGP12ピンに電流制限抵抗（R5=100Ω）を介して接続されています。
 
 ```ruby
 require 'gpio'
