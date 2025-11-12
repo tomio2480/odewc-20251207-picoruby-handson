@@ -141,7 +141,7 @@ R2P2（Ruby Rapid Portable Platform）はPicoRubyで書かれたRaspberry Pi Pic
 ![R2P2シェルの表示](images/R2P2_shell.png)
 
 また、一度接続が確立した後に、ターミナルをそのままにした状態でUSBケーブルを抜き差しすると、ロゴが正しく表示される場合があります。
-ただし、この方法は物理的な負荷があるため、他の方法で解決できる場合はそちらを優先してください。
+ただし、この方法は少々乱暴なため、他の方法で解決できる場合はそちらを優先してください。
 USBケーブルの抜き差しは、Raspberry Pi Pico側ではなくPC側で行うことを推奨します。
 
 ![R2P2のロゴ表示](images/R2P2_shell_logo.png)
