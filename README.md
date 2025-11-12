@@ -138,13 +138,13 @@ R2P2（Ruby Rapid Portable Platform）はPicoRubyで書かれたRaspberry Pi Pic
 このシェルでは`ls`、`pwd`、`cat`などの簡単なUnixコマンドも動作します。
 また、`irb`と入力することで対話的Rubyシェルを起動できます。
 
-![R2P2シェルの表示](R2P2_shell.png)
+![R2P2シェルの表示](images/R2P2_shell.png)
 
 また、一度接続が確立した後に、ターミナルをそのままにした状態でUSBケーブルを抜き差しすると、ロゴが正しく表示される場合があります。
 ただし、この方法は少々乱暴なため、他の方法で解決できる場合はそちらを優先してください。
 USBケーブルの抜き差しは、Raspberry Pi Pico側ではなくPC側で行うことを推奨します。
 
-![R2P2のロゴ表示](R2P2_shell_logo.png)
+![R2P2のロゴ表示](images/R2P2_shell_logo.png)
 
 ## 📕 シリアルポートの確認方法
 
@@ -194,8 +194,8 @@ minicom -D /dev/ttyACM0 -b 115200
 
 なお、Raspberry Pi Picoの裏面にはピン番号とピンの役割（GP番号、3V3、GNDなど）が印刷されているため、配線時に参照できます。
 
-![ブレッドボード配線図](circuit-breadboard.png)
-![回路図](circuit-diagram.png)
+![ブレッドボード配線図](images/circuit-breadboard.png)
+![回路図](images/circuit-diagram.png)
 
 上記の回路図と実体配線図は、Fritzingを使用して作成しました。
 Fritzingは、電子工作のための回路図、ブレッドボード配線図、基板レイアウトを作成できるオープンソースのソフトウェアです。
@@ -338,7 +338,7 @@ app.rbとserial-receiver.rbの両方を準備できたら、実際に動作さ�
 
 以下は、Raspberry Pi PicoとPC側のプログラムが正常に動作している様子です。
 
-![動作確認の様子](operation-confirmation.gif)
+![動作確認の様子](images/operation-confirmation.gif)
 
 ## 📕 挑戦してみよう
 
@@ -400,8 +400,8 @@ app.rbとserial-receiver.rbの両方を準備できたら、実際に動作さ�
 ハンズオンで使用した光センサー以外にも、様々なセンサーやアクチュエーターを接続して実験できます。
 以下に、より複雑な回路例と、各部品の使い方を紹介します。
 
-![レベルアップ用ブレッドボード配線図](circuit-levelup-breadboard.png)
-![レベルアップ用回路図](circuit-levelup-diagram.png)
+![レベルアップ用ブレッドボード配線図](images/circuit-levelup-breadboard.png)
+![レベルアップ用回路図](images/circuit-levelup-diagram.png)
 
 ### 📗 回路図の記号について
 
