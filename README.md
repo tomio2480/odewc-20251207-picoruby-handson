@@ -8,12 +8,12 @@ Raspberry Pi Pico上でPicoRuby (R2P2) を動かし、光センサー（CdSセ�
 
 ## 📕 目次
 
+- [PicoRubyについて](#-picorubyについて)
 - [ハードウェアについて](#-ハードウェアについて)
+- [電子部品の準備](#-電子部品の準備)
 - [R2P2について](#-r2p2について)
 - [シリアルポートの確認方法](#-シリアルポートの確認方法)
-- [電子部品の準備](#-電子部品の準備)
 - [回路の接続](#-回路の接続)
-- [PicoRubyについて](#-picorubyについて)
 - [配線の動作確認](#-配線の動作確認)
 - [今回実装するもの](#-今回実装するもの)
 - [PC側の準備](#-pc側の準備)
@@ -24,6 +24,17 @@ Raspberry Pi Pico上でPicoRuby (R2P2) を動かし、光センサー（CdSセ�
 - [組み合わせてみよう](#-組み合わせてみよう)
 - [ハンズオンのまとめ](#-ハンズオンのまとめ)
 - [Rubyや電子工作のコミュニティとつながろう](#-rubyや電子工作のコミュニティとつながろう)
+
+## 📕 PicoRubyについて
+
+PicoRubyはワンチップマイコン向けの最小Ruby実装です。
+公式ドキュメントではPicoRubyの仕様、使い方、サンプルコードなどが詳しく紹介されています。
+GitHubリポジトリではソースコードも公開されており、より深く学ぶことができます。
+
+- 公式ドキュメント: https://picoruby.github.io/
+- GitHubリポジトリ: https://github.com/picoruby/picoruby
+
+⚠️ **注意**: 今後この資料で出てくるRubyコードのうち、Raspberry Pi Picoに保存して動作させるものについては、PicoRubyで動作するコードです。PC側で動作させるコードは通常のRuby（CRuby）で実行されます。
 
 ## 📕 ハードウェアについて
 
@@ -40,6 +51,57 @@ Raspberry Pi財団が独自に設計したマイクロコントローラチッ�
 プログラマブルI/O（PIO）機能により、柔軟なハードウェアインターフェースの実装が可能です。
 
 参考: https://www.raspberrypi.com/products/rp2040/
+
+## 📕 電子部品の準備
+
+このハンズオンを手元で体験したい方は、事前に秋月電子通商で必要な部品を購入してください。
+ピンヘッダーのはんだづけが必要な場合は、ご自宅で作業を済ませてから会場にお越しください。
+
+⚠️ **注意**: Raspberry Pi Pico ベーシックセットに付属のUSBケーブルはUSB-A to Micro-Bタイプです。
+PCにUSB-Aポートがない場合（USB-Cのみの場合など）は、別途USB-C to Micro-B変換アダプタやケーブルを用意してください。
+
+### 📗 購入すべき部品（秋月電子通商）
+
+**必須部品（1～4）：**
+
+1. **Raspberry Pi Pico ベーシックセット**（ピンヘッダー・USBケーブル付属）
+   https://akizukidenshi.com/catalog/g/g116149/
+
+2. **CdSセル 5mmタイプ**（光センサー）
+   https://akizukidenshi.com/catalog/g/g100110/
+
+3. **カーボン抵抗 1/4W 10kΩ**
+   https://akizukidenshi.com/catalog/g/g125103/
+
+4. **ブレッドボード**（例：ブレッドボード EIC-801）
+   https://akizukidenshi.com/catalog/g/gP-00315/
+
+**推奨部品（もし興味があって他のこともやりたければ）：**
+
+5. **ブレッドボード・ジャンパーワイヤ**（14種類×10本セットなど）
+   https://akizukidenshi.com/catalog/g/g100288/
+
+6. **タクトスイッチ**（例：黒色）
+   https://akizukidenshi.com/catalog/g/g103647/
+
+7. **圧電サウンダ**（例：SPT15）
+   https://akizukidenshi.com/catalog/g/g104228/
+
+8. **LED**（例：5mm赤色LED）
+   https://akizukidenshi.com/catalog/g/g101318/
+
+9. **カーボン抵抗 1/4W 100Ω**
+   https://akizukidenshi.com/catalog/g/g125101/
+
+10. **ティルトスイッチ（傾斜スイッチ）**
+    https://akizukidenshi.com/catalog/c/ctiltsw/
+
+11. **半固定抵抗 1kΩ**
+    https://akizukidenshi.com/catalog/g/g108011/
+
+⚠️ **注意**: 半固定抵抗は複数個購入しておくことを推奨します。半固定抵抗は固定抵抗でうまく回路が動作しないときの調整用として含めており、回路図上には記載されていません。
+
+秋月電子通商: https://akizukidenshi.com/
 
 ## 📕 R2P2について
 
@@ -96,57 +158,6 @@ minicom -D /dev/ttyACM0 -b 115200
 
 接続が成功すると、R2P2のシェルプロンプトが表示されます。
 
-## 📕 電子部品の準備
-
-このハンズオンを手元で体験したい方は、事前に秋月電子通商で必要な部品を購入してください。
-ピンヘッダーのはんだづけが必要な場合は、ご自宅で作業を済ませてから会場にお越しください。
-
-⚠️ **注意**: Raspberry Pi Pico ベーシックセットに付属のUSBケーブルはUSB-A to Micro-Bタイプです。
-PCにUSB-Aポートがない場合（USB-Cのみの場合など）は、別途USB-C to Micro-B変換アダプタやケーブルを用意してください。
-
-### 📗 購入すべき部品（秋月電子通商）
-
-**必須部品（1～4）：**
-
-1. **Raspberry Pi Pico ベーシックセット**（ピンヘッダー・USBケーブル付属）
-   https://akizukidenshi.com/catalog/g/g116149/
-
-2. **CdSセル 5mmタイプ**（光センサー）
-   https://akizukidenshi.com/catalog/g/g100110/
-
-3. **カーボン抵抗 1/4W 10kΩ**
-   https://akizukidenshi.com/catalog/g/g125103/
-
-4. **ブレッドボード**（例：ブレッドボード EIC-801）
-   https://akizukidenshi.com/catalog/g/gP-00315/
-
-**推奨部品（もし興味があって他のこともやりたければ）：**
-
-5. **ブレッドボード・ジャンパーワイヤ**（14種類×10本セットなど）
-   https://akizukidenshi.com/catalog/g/g100288/
-
-6. **タクトスイッチ**（例：黒色）
-   https://akizukidenshi.com/catalog/g/g103647/
-
-7. **圧電サウンダ**（例：SPT15）
-   https://akizukidenshi.com/catalog/g/g104228/
-
-8. **LED**（例：5mm赤色LED）
-   https://akizukidenshi.com/catalog/g/g101318/
-
-9. **カーボン抵抗 1/4W 100Ω**
-   https://akizukidenshi.com/catalog/g/g125101/
-
-10. **ティルトスイッチ（傾斜スイッチ）**
-    https://akizukidenshi.com/catalog/c/ctiltsw/
-
-11. **半固定抵抗 1kΩ**
-    https://akizukidenshi.com/catalog/g/g108011/
-
-⚠️ **注意**: 半固定抵抗は複数個購入しておくことを推奨します。半固定抵抗は固定抵抗でうまく回路が動作しないときの調整用として含めており、回路図上には記載されていません。
-
-秋月電子通商: https://akizukidenshi.com/
-
 ## 📕 回路の接続
 
 ⚠️ **注意**: 回路の配線を行う際には、必ずRaspberry Pi Picoの電源をOFFにしてください。電源をOFFにするには、USBケーブルをPCから外します。USBケーブルの抜き差しは、Raspberry Pi Pico側ではなくPC側で行うことを推奨します。
@@ -174,15 +185,6 @@ Fritzingは、電子工作のための回路図、ブレッドボード配線図
 2. 10kΩ抵抗とCdSセルの接続点が **GP27（ADC1、ピン32）** に接続されているか
 3. 各部品が確実にブレッドボードに挿入されているか（接触不良がないか）
 4. 配線が回路図と一致しているか（ブレッドボード配線図と照らし合わせて確認）
-
-## 📕 PicoRubyについて
-
-PicoRubyはワンチップマイコン向けの最小Ruby実装です。
-公式ドキュメントではPicoRubyの仕様、使い方、サンプルコードなどが詳しく紹介されています。
-GitHubリポジトリではソースコードも公開されており、より深く学ぶことができます。
-
-- 公式ドキュメント: https://picoruby.github.io/
-- GitHubリポジトリ: https://github.com/picoruby/picoruby
 
 ## 📕 配線の動作確認
 
