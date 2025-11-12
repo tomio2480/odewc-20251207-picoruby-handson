@@ -19,6 +19,7 @@ Raspberry Pi Pico上でPicoRuby (R2P2) を動かし、光センサー（CdSセ�
 - [PC側の準備](#-pc側の準備)
 - [ファイル構成](#-ファイル構成)
 - [Raspberry Pi Picoへのapp.rb書き込み手順](#-raspberry-pi-picoへのapprb書き込み手順)
+- [動作確認](#-動作確認)
 - [挑戦してみよう](#-挑戦してみよう)
 - [もっといろいろなことをしたい人へ](#-もっといろいろなことをしたい人へ)
 - [組み合わせてみよう](#-組み合わせてみよう)
@@ -310,6 +311,34 @@ PC上でRuby 3.4を使用して動作する受信プログラムです。
 6. 新しいapp.rbを実行するために、USBケーブルを抜き差ししてRaspberry Pi Picoを再起動します。端子の耐久性を考慮して、PC側のUSB-Aコネクタで抜き差しすることを推奨します。
 
 ⚠️ **注意**: `/home`直下以外に保存したり、ファイル名を`app.rb`以外にすると自動実行されませんので、必ず`/home/app.rb`として保存してください。
+
+## 📕 動作確認
+
+app.rbとserial-receiver.rbの両方を準備できたら、実際に動作させてセンサーデータが正しく送受信されることを確認しましょう。
+
+### 📗 Raspberry Pi Pico側の動作手順
+
+1. 前述の「Raspberry Pi Picoへのapp.rb書き込み手順」に従って、app.rbを`/home`ディレクトリに保存します。
+2. USBケーブルを抜き差ししてRaspberry Pi Picoを再起動します。PC側のUSB-Aコネクタで抜き差しすることを推奨します。
+3. 再起動後、app.rbが自動実行され、センサーデータの送信が開始されます。
+
+### 📗 PC側の動作手順
+
+1. ターミナル（WindowsならコマンドプロンプトまたはPowerShell）を開きます。
+2. serial-receiver.rbがあるディレクトリに移動します。
+3. 必要に応じてserial-receiver.rb内のシリアルポート名（例：COM5、/dev/tty.usbmodem*など）を環境に合わせて編集します。
+4. 以下のコマンドでserial-receiver.rbを実行します：
+   ```bash
+   ruby serial-receiver.rb
+   ```
+5. センサーデータが画面に表示されることを確認します。CdSセルに手をかざして明るさを変えると、値が変化するはずです。
+6. プログラムを終了するには、`Ctrl+C`（Windowsの場合はCtrl+C、Macの場合はControl+C）を押します。
+
+### 📗 動作確認の様子
+
+以下は、Raspberry Pi PicoとPC側のプログラムが正常に動作している様子です。
+
+![動作確認の様子](operation-confirmation.gif)
 
 ## 📕 挑戦してみよう
 
