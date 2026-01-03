@@ -186,6 +186,36 @@ minicom -D /dev/ttyACM0 -b 115200
 
 接続が成功すると、R2P2のシェルプロンプトが表示されます。
 
+### 📗 irbでLEDを制御してみよう
+
+シリアルポート接続が成功したら，irb を使って Raspberry Pi Pico のオンボード LED を制御してみましょう。
+Raspberry Pi Pico には GP25 ピンに接続された LED が基板上に搭載されており，プログラムから制御できます。
+
+**操作手順:**
+
+1. R2P2 のシェルプロンプト（`$>`）で `irb` と入力して Enter キーを押し，対話的 Ruby シェルを起動します。
+2. 以下の PicoRuby コードを 1 行ずつ入力して実行します。
+
+```ruby
+require 'gpio'
+led = GPIO.new(25, GPIO::OUT)
+led.write(1)  # LED点灯
+```
+
+3. Raspberry Pi Pico 基板上の LED が点灯することを確認します。
+4. 次に，以下のコードで LED を消灯させます。
+
+```ruby
+led.write(0)  # LED消灯
+```
+
+5. LED が消灯することを確認します。
+
+⚠️ **注意**: `GPIO.new(25, GPIO::OUT)` の `25` は **GP25（GPIO番号）** を指しています。Raspberry Pi Pico のオンボード LED は GP25 ピンに接続されています。
+
+この操作により，PicoRuby でハードウェアを直接制御できることを体験できます。
+LED の点灯・消灯を繰り返して，GPIO 出力の動作を確認してみてください。
+
 ## 📕 回路の接続
 
 ⚠️ **注意**: 回路の配線を行う際には、必ずRaspberry Pi Picoの電源をOFFにしてください。電源をOFFにするには、USBケーブルをPCから外します。USBケーブルの抜き差しは、Raspberry Pi Pico側ではなくPC側で行うことを推奨します。
