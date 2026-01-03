@@ -197,7 +197,6 @@ Raspberry Pi Pico には GP25 ピンに接続された LED が基板上に搭載
 2. 以下の PicoRuby コードを 1 行ずつ入力して実行します。
 
 ```ruby
-require 'gpio'
 led = GPIO.new(25, GPIO::OUT)
 led.write(1)  # LED点灯
 ```
