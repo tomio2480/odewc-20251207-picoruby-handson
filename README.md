@@ -533,7 +533,7 @@ button.read  # => 押していない: 1（HIGH）、押している: 0（LOW）
 ```ruby
 require 'pwm'
 buzzer = PWM.new(10)
-buzzer.freq(440)   # 440Hzの音（ラの音）を設定
+buzzer.frequency(442)   # 442Hzの音（ラの音）を設定
 buzzer.duty(50)    # デューティ比50%で音を鳴らす
 buzzer.duty(0)     # デューティ比0%で音を止める
 ```
