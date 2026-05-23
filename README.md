@@ -359,7 +359,7 @@ PC上でRuby 3.4を使用して動作する受信プログラムです。
 3. File Editor 上部のテキストフィールドに `/home/app.rb` と入力します．
 4. 「Open local file」で PC 上の `app.rb` を選択し，「Upload」を押します．
 5. アップロードが完了したら，USB ケーブルを抜き差しして Pico を再起動します．PC 側の USB-A コネクタで抜き差しすることを推奨します．
-6. 再起動後， `/home/app.rb` が自動実行されます．起動時 2 秒以内に `s` キーを押すと，自動実行を一時的に抑止できます．
+6. 再起動後， `/home/app.rb` が自動実行されます．自動実行を止めたいときは Web Terminal 上で `Ctrl+C` を押してください．
 
 ![Web Terminal の File Editor で app.rb を Upload する画面（テキストフィールドのパスと Upload ボタンを指示）](images/web-terminal-upload.png)
 ![Upload 完了ログ（CRC32 verified のメッセージと file_write のシェル出力）](images/web-terminal-upload-complete.png)
