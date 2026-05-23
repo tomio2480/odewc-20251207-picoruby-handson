@@ -164,7 +164,8 @@ R2P2 3.4 以降に対応しており，TeraTerm や screen といったターミ
 4. ブラウザのポート選択ダイアログが表示されたら，Raspberry Pi Pico のポートを選択して接続します．
 5. R2P2 のシェルプロンプト（`$>`）が表示されれば接続成功です．
 
-![Web Terminal の接続画面](images/web-terminal-connect.png)
+![Web Terminal のポート選択ダイアログ（PicoRuby CDC のポートを選択する）](images/web-terminal-port-select.png)
+![Web Terminal の接続成功画面（Connected 表示と `$>` プロンプト）](images/web-terminal-connect.png)
 
 「Select closest version number to your R2P2」ドロップダウンは `Latest` のままで問題ありません．
 
@@ -360,7 +361,8 @@ PC上でRuby 3.4を使用して動作する受信プログラムです。
 5. アップロードが完了したら，USB ケーブルを抜き差しして Pico を再起動します．PC 側の USB-A コネクタで抜き差しすることを推奨します．
 6. 再起動後， `/home/app.rb` が自動実行されます．起動時 2 秒以内に `s` キーを押すと，自動実行を一時的に抑止できます．
 
-![Web Terminal の File Editor で app.rb を Upload する画面](images/web-terminal-upload.png)
+![Web Terminal の File Editor で app.rb を Upload する画面（テキストフィールドのパスと Upload ボタンを指示）](images/web-terminal-upload.png)
+![Upload 完了ログ（CRC32 verified のメッセージと file_write のシェル出力）](images/web-terminal-upload-complete.png)
 
 ⚠️ **注意**: `/home/app.rb` 以外のパスまたはファイル名で保存すると自動実行されません．必ず `/home/app.rb` として保存してください．
 
